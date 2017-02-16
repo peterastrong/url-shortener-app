@@ -1,16 +1,19 @@
 
+<a href="/links/new">Create a new link.</a>
+
 
 <table>
   <tr>
     <th>Slug</th>
     <th>Target URL</th>
-    <th>Created At</th>
+    <th>link page</th>
   </tr>
   <% @links.each do |link| %>
     <tr>
-      <td> <a href="<%= "/#{link.slug}" %>"> localhost:300/<%= link.slug %> </a></td>
+      <td> <a href="<%= "/#{link.slug}" %>"> http://localhost:3000/<%= link.slug %> </a></td>
       <td><%= link.target_url %></td>
-      <td><%= link.created_at %></td>
+      <td> <a href="<%= "/links/#{link.id}" %>"><%= link.id %></a> </td>
+      <td><a href="<%= "/links/#{link.id}/edit" %>">Edit</a></td>
     </tr>
   <% end %>
 <table>

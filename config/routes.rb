@@ -11,14 +11,14 @@ Rails.application.routes.draw do
     end
   end
 
-#links routes
-  get "/links", to: "links#index"
-  get "/links/new", to: "links#new"
-  post "/links", to: "links#create"
-  get "/links/:slug", to: "links#show"
 
-#vists routes
-  get "/:slug", to: "visits#create"
+  resources :links
+
+  resources :visits
+
+  get '/:slug' => 'visits#create'
+
+
 
   
 end

@@ -1,0 +1,7 @@
+<h1>Update the link info</h1>
+
+<%= form_tag "/links/#{@link.id}", method: :patch do %>
+  <p><input type="text" name="slug" value="<%= @link[:slug] %>"></p>
+  <p><input type="text" name="target_url" value="<%= @link[:target_url] %>"></p>
+  <p><input type="submit" name="Update"></p> 
+<% end  %>
