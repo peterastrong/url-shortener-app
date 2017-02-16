@@ -26,9 +26,8 @@ class LinksController < ApplicationController
   end
 
   def show
-    @link = link.find_by(slug: params[:slug])
-    puts @link
-    redirect_to "#{@link.target_url}"
+    @link = Link.find_by(slug: params[:slug])
+    render "show.html.erb"
   end
 
 end
