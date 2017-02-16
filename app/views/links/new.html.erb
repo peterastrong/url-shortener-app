@@ -1,0 +1,24 @@
+<h1>create a new mini link</h1>
+ 
+  <% if @link.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@link.errors.count, "error") %> prohibited this post from being saved:</h2>
+
+    <ul>
+    <% @link.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+  <% end %>
+
+<%= form_tag "/links", method: :post do %>
+
+  <p>Enter your long url: <input type="text" name="target_url"></p> 
+
+  <p>Enter your mini url(slug): <input type="text" name="slug"> </p>
+
+  <input type="submit" name="Submit">
+
+  <% end %>
+  
